@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registro - Municipalidad de Escazú</title>
+        <link rel="stylesheet" href="../Styles/register.css">
+        <link rel="stylesheet" href="../Styles/nav.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <nav class="main-nav">
+            <div class="nav-logo">
+            <h1 style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 300; font-size: 30px;">Municipalidad de Escazú</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/login.html">Iniciar Sesión</a></li>
+                <li><a href="../pages/administrador.html">Entrar como administrador</a></li>
+            </ul>
+        </nav>
+        <div class="registration-container">
+            <header class="registration-header">
+                <div class="logo-container">
+                    <img src="../IMG/logo Muni.svg" alt="Logo Municipalidad">
+                </div>
+                <p>Forme parte de nuestra comunidad digital para acceder a trámites y servicios.</p>
+        </header>
+
+        <main class="registration-main">
+            <form id="formulario-registro" class="registration-form">
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="nombre-completo">Nombre Completo</label>
+                        <input type="text" id="nombre-completo" name="fullname" placeholder="Ej: Juan Pérez Mora"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numero-cedula">Cédula / Identificación</label>
+                        <input type="text" id="numero-cedula" name="id-number" placeholder="1-1234-5678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo-electronico">Correo Electrónico</label>
+                        <input type="email" id="correo-electronico" name="email" placeholder="usuario@ejemplo.com"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="phone" placeholder="8888-8888" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="distrito">Distrito</label>
+                        <select id="distrito" name="district" required>
+                            <option value="" disabled selected>Seleccione su distrito</option>
+                            <option value="escazu">Escazú Centro</option>
+                            <option value="san-antonio">San Antonio</option>
+                            <option value="san-rafael">San Rafael</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="direccion">Dirección Exacta</label>
+                        <textarea id="direccion" name="address" rows="2" placeholder="Otras señas para su ubicación..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" name="password" placeholder="••••••••" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmar-contrasena">Confirmar Contraseña</label>
+                        <input type="password" id="confirmar-contrasena" name="confirm-password" placeholder="••••••••"
+                            required>
+                    </div>
+                </div>
+
+                <div class="terms-group">
+                    <input type="checkbox" id="terminos" name="terms" required>
+                    <label for="terminos">Acepto los <a href="#">términos y condiciones</a> de privacidad.</label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Crear Cuenta</button>
+                    <p class="login-link">¿Ya tiene cuenta? <a href="login.html">Inicie sesión aquí</a></p>
+                </div>
+            </form>
+        </main>
+
+        <aside class="registration-info">
+            <div class="info-card info-blue">
+                <div class="icon-circle"></div>
+                <h3>Trámites en línea</h3>
+                <p>Ahorre tiempo realizando sus pagos y solicitudes desde la comodidad de su hogar.</p>
+            </div>
+            <div class="info-card info-yellow">
+                <div class="icon-circle"></div>
+                <h3>Notificaciones</h3>
+                <p>Manténgase informado sobre campañas de reciclaje, eventos y avisos municipales.</p>
+            </div>
+            <div class="info-card info-green">
+                <div class="icon-circle"></div>
+                <h3>Seguridad</h3>
+                <p>Sus datos están protegidos bajo los más altos estándares de seguridad institucional.</p>
+            </div>
+
+            <footer class="registration-footer">
+                <p>&copy; 2026 Municipalidad de Escazú - Gobierno Local</p>
+            </footer>
+        </aside>
+    </div>
+    <br>
+    <div>
+    </div>
+</body>
+
+</html>

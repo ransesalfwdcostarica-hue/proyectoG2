@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Administrativo - Municipalidad de Escazú</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Styles/nav.css">
+    <link rel="stylesheet" href="../Styles/administrador.css">
+</head>
+
+<body>
+    <nav class="main-nav">
+        <div>
+            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 300; color: white; font-size: 30px">Municipalidad de Escazú</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="../pages/register.html">Registrarse</a></li>
+            <li><a href="../pages/login.html">Iniciar Sesión</a></li>
+        </ul>
+    </nav>
+    <div class="admin-page-container">
+        <!-- Toggler for Login/Dashboard -->
+        <input type="checkbox" id="interruptor-autenticacion">
+
+        <!-- Login Screen Overlay -->
+        <div class="login-overlay">
+            <div class="login-card">
+                <img src="../IMG/logo Muni.svg" alt="Logo"
+                    style="margin-bottom: 20px; width: 140px; height: auto; background-color: white;">
+                <h1>Acceso Administrativo</h1>
+                <div class="form-group">
+                    <label for="clave">Contraseña del Sistema</label>
+                    <input type="password" id="clave" placeholder="••••••••">
+                </div>
+                <label for="interruptor-autenticacion" class="btn-ingresar">Ingresar al Dashboard</label>
+            </div>
+            <p style="margin-top: 20px; color: #888; font-size: 0.9rem;">Exclusivo para personal de la Municipalidad de
+                Escazú</p>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-layout">
+            <aside class="sidebar">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 40px;">
+                    <img src="../IMG/logo Muni.svg" alt="Logo" style="width: 90px; height: auto; background-color: white;">
+                    <h2 style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">Panel Escazú</h2>
+                </div>
+                <nav>
+                    <a href="#" class="nav-item active">📊 Dashboard</a>
+                    <a href="#" class="nav-item">👥 Usuarios</a>
+                    <a href="#" class="nav-item">⚠️ Problemáticas</a>
+                    <a href="#" class="nav-item">📈 Reportes</a>
+                    <a href="#" class="nav-item">⚙️ Configuración</a>
+                </nav>
+                <div style="margin-top: auto; font-size: 0.8rem; opacity: 0.7;">
+                    &copy; 2026 Admin Portal
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <header class="header-dashboard">
+                    <h1>Resumen General</h1>
+                    <div class="user-profile" style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-weight: 600;">Admin_Ramses</span>
+                        <div
+                            style="width: 40px; height: 40px; background: var(--accent-yellow); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--primary-blue);">
+                            R</div>
+                    </div>
+                </header>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Usuarios Registrados</h3>
+                        <div class="value">1,248</div>
+                    </div>
+                    <div class="stat-card yellow">
+                        <h3>Reportes Pendientes</h3>
+                        <div class="value">42</div>
+                    </div>
+                    <div class="stat-card green">
+                        <h3>Casos Resueltos</h3>
+                        <div class="value">315</div>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h2>👥 Usuarios Recientes</h2>
+                </div>
+                <div class="data-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>ID / Cédula</th>
+                                <th>Distrito</th>
+                                <th>Correo</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Maria Rodriguez</td>
+                                <td>1-0987-0654</td>
+                                <td>Escazú Centro</td>
+                                <td>m.rodriguez@email.com</td>
+                                <td><span class="badge badge-resolved">Activo</span></td>
+                            </tr>
+                            <tr>
+                                <td>Carlos Quesada</td>
+                                <td>2-0453-0122</td>
+                                <td>San Rafael</td>
+                                <td>cquesada@ejemplo.org</td>
+                                <td><span class="badge badge-resolved">Activo</span></td>
+                            </tr>
+                            <tr>
+                                <td>Ana Sophia Varela</td>
+                                <td>1-1122-3344</td>
+                                <td>San Antonio</td>
+                                <td>ana.varela@web.com</td>
+                                <td><span class="badge badge-resolved">Activo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section-title">
+                    <h2>⚠️ Problemáticas del Cantón</h2>
+                </div>
+                <div class="data-table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Categoría</th>
+                                <th>Descripción</th>
+                                <th>Fecha</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#4092</td>
+                                <td>Infraestructura</td>
+                                <td>Hueco profundo en Calle Los Mangos que afecta tránsito</td>
+                                <td>12/02/2026</td>
+                                <td><span class="badge badge-pending">Pendiente</span></td>
+                            </tr>
+                            <tr>
+                                <td>#4088</td>
+                                <td>Alumbrado</td>
+                                <td>Luminaria parpadeante frente al parque de San Antonio</td>
+                                <td>10/02/2026</td>
+                                <td><span class="badge badge-resolved">En Revisión</span></td>
+                            </tr>
+                            <tr>
+                                <td>#4075</td>
+                                <td>Aseo</td>
+                                <td>Acumulación de residuos en esquina norte del cementerio</td>
+                                <td>08/02/2026</td>
+                                <td><span class="badge badge-pending">Urgente</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="scroll-hint">Deslice hacia abajo para ver más registros</p>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
