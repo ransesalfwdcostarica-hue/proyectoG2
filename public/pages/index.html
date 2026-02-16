@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8"><title>Escazú - Gestión Vial</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Municipalidad de Escazú</h1>
+        <div class="nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="login.html">Login</a>
+            <a href="register.html" class="btn btn-accent">Registro</a>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 50px;">
+        <div id="report-section" class="auth-card" style="max-width: 800px; margin: auto;">
+            <h2>Reportar Incidencia</h2>
+            <form id="report-form">
+                <select name="tipo" required>
+                    <option value="Bache">Bache en Carretera</option>
+                    <option value="Alumbrado">Falla de Alumbrado</option>
+                    <option value="Alcantarillado">Alcantarillado Obstruido</option>
+                </select>
+                <input type="text" name="ubicacion" placeholder="Dirección exacta" required>
+                <textarea name="descripcion" placeholder="Detalles del problema" rows="5" required></textarea>
+                <button type="submit" class="btn btn-primary">Enviar Reporte</button>
+            </form>
+        </div>
+    </main>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
