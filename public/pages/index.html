@@ -5,43 +5,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Municipalidad de Escazú - Gestión Vial y Servicios</title>
+    <link rel="stylesheet" href="../Styles/index.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="index.html">Muni Escazú</a>
+            <a href="index.html" class="logo">
+                <img src="../img/logo.jpg" alt="Muni Escazú Logo">
+            </a>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="#">Gestión Vial</a></li>
-                <li><a href="#">Servicios Públicos</a></li>
-                <li><a href="login.html">Acceder</a></li>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/login.html">Iniciar Sesión</a></li>
+                <li><a href="../pages/register.html">Registrarse</a></li>
+                <li><a href="../pages/administrador.html">Entrar como administrador</a></li>
             </ul>
         </nav>
     </header>
+
 
     <main>
         <section>
             <h1>Gestión Integral Escazú</h1>
             <p>Plataforma digital para la gestión eficiente de infraestructura vial y servicios públicos del cantón.</p>
-            <div>
-                <button>Reportar Incidencia</button>
-                <button>Ver Servicios</button>
+            <div class="btn-group">
+                <button class="btn btn-success">Reportar Incidencia</button>
+                <button class="btn btn-primary">Ver Servicios</button>
             </div>
         </section>
 
         <section>
             <h2>Nuestros Servicios</h2>
-            <div>
-                <div>
+            <div class="services-grid">
+                <div class="service-card">
                     <h3>Infraestructura Vial</h3>
                     <p>Reporte de baches, señalización y mantenimiento de alcantarillado.</p>
                 </div>
-                <div>
+                <div class="service-card">
                     <h3>Alumbrado Público</h3>
                     <p>Gestión y reparación de luminarias en todo el cantón.</p>
                 </div>
-                <div>
+                <div class="service-card">
                     <h3>Zonas Verdes</h3>
                     <p>Mantenimiento de parques y recolección de residuos orgánicos.</p>
                 </div>
@@ -50,19 +54,21 @@
     </main>
 
     <footer>
-        <div>
-            <h3>Municipalidad de Escazú</h3>
-            <p>Trabajando por un cantón más próspero y seguro.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Municipalidad de Escazú</h3>
+                <p>Trabajando por un cantón más próspero y seguro.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <ul>
+                    <li>Teléfono: +506 2208-7500</li>
+                    <li>Email: info@escazu.go.cr</li>
+                    <li>Dirección: Escazú Centro</li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <h4>Contacto</h4>
-            <ul>
-                <li>Teléfono: +506 2208-7500</li>
-                <li>Email: info@escazu.go.cr</li>
-                <li>Dirección: Escazú Centro</li>
-            </ul>
-        </div>
-        <div>
+        <div class="footer-bottom">
             <p>&copy; 2026 Municipalidad de Escazú - Gestión y Desarrollo de TI</p>
         </div>
     </footer>
