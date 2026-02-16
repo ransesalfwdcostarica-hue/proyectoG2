@@ -58,7 +58,8 @@ body {
 }
 
 .login-card {
-    width: 400px;
+    width: 600px;
+    height: auto;
     padding: 40px;
     text-align: center;
     border-top: 5px solid var(--primary-blue);
@@ -86,10 +87,10 @@ body {
 
 .form-group input {
     width: 100%;
-    padding: 12px;
+    padding: 18px;
     border: 1.5px solid #d1d9e6;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .btn-ingresar {

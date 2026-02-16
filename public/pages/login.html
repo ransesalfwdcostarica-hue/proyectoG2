@@ -5,44 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Municipal - Escazú</title>
+    <link rel="stylesheet" href="../Styles/login.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="index.html">Muni Escazú</a>
+            <a href="index.html" class="logo">
+                <img src="../img/logo.jpg" alt="Muni Escazú Logo">
+            </a>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="login.html">Acceder</a></li>
+                <li><a href="../pages/index.html">Inicio</a></li>
+                <li><a href="../pages/login.html">Iniciar Sesión</a></li>
+                <li><a href="../pages/register.html">Registrarse</a></li>
+                <li><a href="../pages/administrador.html">Entrar como administrador</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Portal Municipal</h2>
-            <p>Acceda para gestionar sus reportes</p>
-
-            <form>
-                <div>
-                    <label>Correo Electrónico</label>
-                    <input type="email" placeholder="ejemplo@escazu.go.cr" required>
+        <div class="login-container">
+            <section>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2>Portal Municipal</h2>
+                    <p>Acceda para gestionar sus reportes</p>
                 </div>
 
-                <div>
-                    <label>Contraseña</label>
-                    <input type="password" placeholder="••••••••" required>
-                </div>
+                <form>
+                    <div class="form-group">
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="ejemplo@escazu.go.cr" required>
+                    </div>
 
-                <button type="submit">Iniciar Sesión</button>
-            </form>
+                    <div class="form-group">
+                        <label>Contraseña</label>
+                        <input type="password" placeholder="••••••••" required>
+                    </div>
 
-            <p>¿Olvidó su contraseña? Contacte a soporte técnico.</p>
-        </section>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </form>
+
+                <p class="login-help">¿Olvidó su contraseña? Contacte a soporte técnico.</p>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 Municipalidad de Escazú - Gestión y Desarrollo de TI</p>
+        <div class="footer-bottom" style="margin-top: 0; border-top: none;">
+            <p>&copy; 2026 Municipalidad de Escazú - Gestión y Desarrollo de TI</p>
+        </div>
     </footer>
 </body>
 
