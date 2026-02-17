@@ -2,7 +2,7 @@ async function postUsuarios(usuario) {
 
     try {
 
-        const respuesta = await fetch("http://localhost:3001/usuarios",{
+        const respuesta = await fetch("http://localhost:3005/usuarios",{
             method: "POST",
             headers: {
             "Content-Type": "application/json"

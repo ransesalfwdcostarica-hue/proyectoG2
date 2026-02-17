@@ -1,11 +1,23 @@
 {
-    "usuarios": [
-        {
-            "id": 1,
-            "nombreCompleto": "Juan Pérez",
-            "email": "juan.perez@example.com",
-            "Cedula": "123456789",
-            "telefono": "555-1234"
-        }
-    ]
+  "usuarios": [
+    {
+      "id": "1",
+      "nombreCompleto": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "Cedula": "123456789",
+      "telefono": "555-1234"
+    },
+    {
+      "id": "c7ce",
+      "nombre": "Ransés Alvir",
+      "cedula": "120370162",
+      "correo": "ransesalvir75@gmail.com",
+      "telefono": "60184472",
+      "distrito": "escazu",
+      "direccion": "WVCW+VH4\nAvenida Villanea",
+      "contrasena": "12345",
+      "confirmarContrasena": "12345",
+      "terminos": true
+    }
+  ]
 }
