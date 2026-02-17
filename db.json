@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "admin-99",
+      "nombre": "Administrador Municipal",
+      "correo": "admin@escazu.go.cr",
+      "password": "admin",
+      "telefono": "2208-7500",
+      "rol": "admin"
+    },
+    {
+      "id": "user-1",
+      "nombre": "Ciudadano Prueba",
+      "correo": "ciudadano@mail.com",
+      "password": "123",
+      "telefono": "8888-8888",
+      "rol": "ciudadano"
+    }
+  ],
+  "reports": [],
+  "projects": [],
+  "services": []
+}
