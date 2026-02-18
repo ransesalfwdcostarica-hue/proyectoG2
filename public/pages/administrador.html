@@ -8,12 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/nav.css">
     <link rel="stylesheet" href="../Styles/administrador.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/administrador.js"></script>
 </head>
 
 <body>
     <nav class="main-nav">
         <div>
-            <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 300; color: white; font-size: 30px">Municipalidad de Escazú</h1>
+            <h1
+                style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 300; color: white; font-size: 30px">
+                Municipalidad de Escazú</h1>
         </div>
         <ul class="nav-links">
             <li><a href="../pages/index.html">Inicio</a></li>
@@ -35,7 +39,7 @@
                     <label for="clave">Contraseña del Sistema</label>
                     <input type="password" id="clave" placeholder="••••••••">
                 </div>
-                <label for="interruptor-autenticacion" class="btn-ingresar">Ingresar al Dashboard</label>
+                <button id="btn-login-admin" class="btn-ingresar">Ingresar al Dashboard</button>
             </div>
             <p style="margin-top: 20px; color: #888; font-size: 0.9rem;">Exclusivo para personal de la Municipalidad de
                 Escazú</p>
@@ -45,15 +49,15 @@
         <div class="dashboard-layout">
             <aside class="sidebar">
                 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 40px;">
-                    <img src="../IMG/logo Muni.svg" alt="Logo" style="width: 90px; height: auto; background-color: white;">
+                    <img src="../IMG/logo Muni.svg" alt="Logo"
+                        style="width: 90px; height: auto; background-color: white;">
                     <h2 style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">Panel Escazú</h2>
                 </div>
-                <nav>
-                    <a href="#" class="nav-item active">📊 Dashboard</a>
-                    <a href="#" class="nav-item">👥 Usuarios</a>
-                    <a href="#" class="nav-item">⚠️ Problemáticas</a>
-                    <a href="#" class="nav-item">📈 Reportes</a>
-                    <a href="#" class="nav-item">⚙️ Configuración</a>
+                <nav id="admin-sidebar-nav">
+                    <a href="#" id="menu-dashboard" class="nav-item active">📊 Dashboard</a>
+                    <a href="#" id="menu-reportes" class="nav-item">📝 Gestión de Reportes</a>
+                    <a href="#" id="menu-proyectos" class="nav-item">🏗️ Gestión de Proyectos Viales</a>
+                    <a href="#" id="menu-servicios" class="nav-item">🛠️ Gestión de Servicios Públicos</a>
                 </nav>
                 <div style="margin-top: auto; font-size: 0.8rem; opacity: 0.7;">
                     &copy; 2026 Admin Portal
@@ -74,7 +78,7 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <h3>Usuarios Registrados</h3>
-                        <div class="value">1,248</div>
+                        <div id="stat-usuarios-count" class="value">0</div>
                     </div>
                     <div class="stat-card yellow">
                         <h3>Reportes Pendientes</h3>
@@ -100,28 +104,8 @@
                                 <th>Estado</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>Maria Rodriguez</td>
-                                <td>1-0987-0654</td>
-                                <td>Escazú Centro</td>
-                                <td>m.rodriguez@email.com</td>
-                                <td><span class="badge badge-resolved">Activo</span></td>
-                            </tr>
-                            <tr>
-                                <td>Carlos Quesada</td>
-                                <td>2-0453-0122</td>
-                                <td>San Rafael</td>
-                                <td>cquesada@ejemplo.org</td>
-                                <td><span class="badge badge-resolved">Activo</span></td>
-                            </tr>
-                            <tr>
-                                <td>Ana Sophia Varela</td>
-                                <td>1-1122-3344</td>
-                                <td>San Antonio</td>
-                                <td>ana.varela@web.com</td>
-                                <td><span class="badge badge-resolved">Activo</span></td>
-                            </tr>
+                        <tbody id="tabla-usuarios-body">
+                            <!-- Los usuarios se cargarán dinámicamente aquí -->
                         </tbody>
                     </table>
                 </div>
@@ -133,35 +117,16 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Categoría</th>
-                                <th>Descripción</th>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                                <th>Asunto</th>
                                 <th>Fecha</th>
                                 <th>Estado</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>#4092</td>
-                                <td>Infraestructura</td>
-                                <td>Hueco profundo en Calle Los Mangos que afecta tránsito</td>
-                                <td>12/02/2026</td>
-                                <td><span class="badge badge-pending">Pendiente</span></td>
-                            </tr>
-                            <tr>
-                                <td>#4088</td>
-                                <td>Alumbrado</td>
-                                <td>Luminaria parpadeante frente al parque de San Antonio</td>
-                                <td>10/02/2026</td>
-                                <td><span class="badge badge-resolved">En Revisión</span></td>
-                            </tr>
-                            <tr>
-                                <td>#4075</td>
-                                <td>Aseo</td>
-                                <td>Acumulación de residuos en esquina norte del cementerio</td>
-                                <td>08/02/2026</td>
-                                <td><span class="badge badge-pending">Urgente</span></td>
-                            </tr>
+                        <tbody id="tabla-reportes-body">
+                            <!-- Los reportes se cargarán dinámicamente aquí -->
                         </tbody>
                     </table>
                 </div>

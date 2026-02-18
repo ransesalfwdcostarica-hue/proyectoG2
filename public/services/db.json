@@ -1,11 +1,81 @@
 {
-    "usuarios": [
-        {
-            "id": 1,
-            "nombreCompleto": "Juan Pérez",
-            "email": "juan.perez@example.com",
-            "Cedula": "123456789",
-            "telefono": "555-1234"
-        }
-    ]
+  "usuarios": [
+    {
+      "id": "1",
+      "nombreCompleto": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "Cedula": "123456789",
+      "telefono": "555-1234"
+    },
+    {
+      "id": "c7ce",
+      "nombre": "Ransés Alvir",
+      "cedula": "120370162",
+      "correo": "ransesalvir75@gmail.com",
+      "telefono": "60184472",
+      "distrito": "escazu",
+      "direccion": "WVCW+VH4\nAvenida Villanea",
+      "contrasena": "12345",
+      "confirmarContrasena": "12345",
+      "terminos": true
+    },
+    {
+      "id": "4642",
+      "nombre": "Rodrigo Chaves Robles",
+      "cedula": "120372812",
+      "correo": "chavespresi22@gmailcom",
+      "telefono": "20394857",
+      "distrito": "san-antonio",
+      "direccion": "Escazú centro",
+      "contrasena": "12345"
+    },
+    {
+      "id": "f88f",
+      "nombre": "Ranses Alvir",
+      "cedula": "2322444555",
+      "correo": "ransesalfwdcostarica@gmail.com",
+      "telefono": "20394857",
+      "distrito": "escazu",
+      "direccion": "erggqgr",
+      "contrasena": "12345"
+    },
+    {
+      "id": "b173",
+      "nombre": "Bele Garcia",
+      "cedula": "39492495293",
+      "correo": "ransesalfwdcostarica@gmail.com",
+      "telefono": "20394857",
+      "distrito": "escazu",
+      "direccion": "ijfejwfjwpfp",
+      "contrasena": "12345"
+    }
+  ],
+  "reportes": [
+    {
+      "nombre": "Ranses Alvir Thomas",
+      "correo": "ransesalfwdcostarica@gmail.com",
+      "asunto": "Calles con guecos y tuberias rotas y mala gestión de desechos",
+      "fecha": "2026-02-05",
+      "estado": "Resuelto",
+      "id": "e37a"
+    }
+  ],
+  "proyectos": [
+    {
+      "id": "1",
+      "nombre": "Plan de Bacheo Centro",
+      "descripcion": "Reparación de vías principales en el distrito central.",
+      "presupuesto": "50,000,000 CRC",
+      "estado": "En progreso"
+    }
+  ],
+  "servicios": [
+    {
+      "id": "1",
+      "nombre": "Recolección de Residuos",
+      "descripcion": "Gestión diaria de desechos sólidos.",
+      "horario": "6:00 AM - 2:00 PM",
+      "encargado": "Dpto. Higiene"
+    }
+  ]
 }

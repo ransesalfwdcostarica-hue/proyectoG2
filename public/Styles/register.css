@@ -27,22 +27,32 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
-    padding: 85px 20px 20px; /* Aumentado el padding superior para la barra de navegación */
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    padding: 100px 20px 40px;
 }
 
 .registration-container {
     background-color: var(--bg-white);
     width: 100%;
-    max-width: 1200px;
-    min-height: 800px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
+    max-width: 1100px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* Two main columns for Desktop */
-    grid-template-rows: auto 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     overflow: hidden;
+    animation: zoomIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Header spanning top in Desktop */

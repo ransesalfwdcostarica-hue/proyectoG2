@@ -25,7 +25,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px; /* Espacio para la barra de navegación fija */
+    padding-top: 80px;
+    /* Espacio para la barra de navegación fija */
 }
 
 /* Logic for CSS-only transition */
@@ -36,7 +37,8 @@ body {
 .admin-page-container {
     width: 95%;
     max-width: 1600px;
-    height: 85vh; /* Altura ajustada para mejor encaje con la barra fija */
+    height: 85vh;
+    /* Altura ajustada para mejor encaje con la barra fija */
     background: var(--bg-white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
@@ -185,18 +187,25 @@ body {
 }
 
 .stat-card {
-    padding: 25px;
-    border-radius: var(--border-radius);
-    background: #f8f9fa;
-    border-left: 5px solid var(--primary-blue);
+    padding: 30px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f3f5;
+    border-top: 5px solid var(--primary-blue);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
 }
 
 .stat-card.yellow {
-    border-left-color: var(--accent-yellow);
+    border-top-color: var(--accent-yellow);
 }
 
 .stat-card.green {
-    border-left-color: var(--accent-green);
+    border-top-color: var(--accent-green);
 }
 
 .stat-card h3 {
@@ -273,4 +282,31 @@ tr:hover {
     font-size: 0.8rem;
     color: #aaa;
     margin-top: 10px;
+}
+
+/* Dynamic Buttons */
+.btn-success {
+    background: var(--accent-green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-success:hover {
+    opacity: 0.9;
+}
+
+.data-table-container td button {
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.data-table-container td button:hover {
+    background: #f1f3f5;
 }
