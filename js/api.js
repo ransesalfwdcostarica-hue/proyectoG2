@@ -1,52 +1,48 @@
 import { BASE_URL } from './config.js';
 
 export const API = {
-    // Obtener todos los datos de un módulo
-    async get(endpoint) {
+    // Método privado para manejar peticiones centralizadas
+    async _request(endpoint, method = 'GET', data = null) {
+        const options = {
+            method,
+            headers: { 'Content-Type': 'application/json' }
+        };
+        if (data) options.body = JSON.stringify(data);
+
         try {
-            const response = await fetch(`${BASE_URL}/${endpoint}`);
+            const response = await fetch(`${BASE_URL}/${endpoint}`, options);
+            
+            if (!response.ok) {
+                throw new Error(`Error ${response.status}: ${response.statusText}`);
+            }
+
+            // Si es DELETE, a veces no devuelve JSON, manejamos eso
+            if (method === 'DELETE') return true;
+            
             return await response.json();
         } catch (error) {
-            console.error(`Error cargando ${endpoint}:`, error);
+            console.error(`API Error (${method} ${endpoint}):`, error);
+            throw error; // Re-lanzar para que el UI lo maneje
         }
+    },
+
+    // Obtener todos los datos de un módulo
+    async get(endpoint) {
+        return this._request(endpoint, 'GET');
     },
 
     // Crear un nuevo registro (POST)
     async post(endpoint, data) {
-        try {
-            const response = await fetch(`${BASE_URL}/${endpoint}`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            return await response.json();
-        } catch (error) {
-            console.error(`Error guardando en ${endpoint}:`, error);
-        }
+        return this._request(endpoint, 'POST', data);
     },
 
     // Eliminar un registro (DELETE)
     async delete(endpoint, id) {
-        try {
-            await fetch(`${BASE_URL}/${endpoint}/${id}`, { method: 'DELETE' });
-            return true;
-        } catch (error) {
-            console.error(`Error eliminando en ${endpoint}:`, error);
-            return false;
-        }
+        return this._request(`${endpoint}/${id}`, 'DELETE');
     },
 
     // Actualizar un registro (PUT)
     async put(endpoint, id, data) {
-        try {
-            const response = await fetch(`${BASE_URL}/${endpoint}/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            return await response.json();
-        } catch (error) {
-            console.error(`Error actualizando ${endpoint}:`, error);
-        }
+        return this._request(`${endpoint}/${id}`, 'PUT', data);
     }
 };

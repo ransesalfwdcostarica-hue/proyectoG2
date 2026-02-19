@@ -9,32 +9,36 @@ document.addEventListener('DOMContentLoaded', async () => {
     // --- LÓGICA DE LOGIN ---
     const loginForm = document.getElementById('form-login');
     if (loginForm) {
-        loginForm.onsubmit = async (e) => {
+        loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             try {
                 const session = await Auth.login(loginForm.correo.value, loginForm.password.value);
                 window.location.href = (session.rol === 'admin') ? "admin.html" : "index.html";
             } catch (err) { alert(err.message); }
-        };
+        });
     }
 
     // --- LÓGICA DE REGISTRO ---
     const regForm = document.getElementById('form-register');
     if (regForm) {
-        regForm.onsubmit = async (e) => {
+        regForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const newUser = Object.fromEntries(new FormData(regForm));
             newUser.rol = "ciudadano"; // Por defecto siempre es ciudadano
-            await API.post('users', newUser);
-            alert("Registro exitoso, por favor inicia sesión.");
-            window.location.href = "login.html";
-        };
+            try {
+                await API.post('users', newUser);
+                alert("Registro exitoso, por favor inicia sesión.");
+                window.location.href = "login.html";
+            } catch (error) {
+                alert("Error en el registro: " + error.message);
+            }
+        });
     }
 
     // --- LÓGICA DE REPORTES (HOME) ---
     const reportForm = document.getElementById('form-report');
     if (reportForm) {
-        reportForm.onsubmit = async (e) => {
+        reportForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             if (!user) return alert("Debes iniciar sesión para reportar.");
             
@@ -42,10 +46,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             reportData.estado = "Pendiente";
             reportData.ciudadano = user.nombre;
             
-            await API.post('reports', reportData);
-            alert("Reporte enviado con éxito.");
-            reportForm.reset();
-        };
+            try {
+                await API.post('reports', reportData);
+                alert("Reporte enviado con éxito.");
+                reportForm.reset();
+            } catch (error) {
+                alert("No se pudo enviar el reporte.");
+            }
+        });
     }
 
     // --- DASHBOARD ADMINISTRADOR ---
@@ -69,6 +77,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         AdminModule.setupForm('form-service', 'services');
 
         // Botón Logout
-        document.getElementById('logout-btn').onclick = () => Auth.logout();
+        document.getElementById('logout-btn').addEventListener('click', () => Auth.logout());
     }
 });
